@@ -1,22 +1,18 @@
 openapi: 3.0.3
 info:
   title: API de Cuentas Bancarias
-  version: "1.0.0"
+  version: "1.0.0" # LAB: sustituir por 1.0.0
   description: API educativa para consultar cuentas bancarias ficticias.
   contact:
     name: Equipo API
     email: api@example.org
 servers:
   - url: https://example.execute-api.us-east-1.amazonaws.com/test
-tags:
-  - name: Cuentas
-    description: Operaciones sobre cuentas bancarias ficticias
 paths:
   /clientes/{cliente-id}/cuentas:
     get:
       tags: [Cuentas]
       summary: Consultar cuentas de un cliente
-      description: Devuelve las cuentas bancarias ficticias asociadas al cliente indicado.
       operationId: listarCuentasCliente
       parameters:
         - name: cliente-id
@@ -53,7 +49,6 @@ paths:
     post:
       tags: [Cuentas]
       summary: Crear una cuenta simulada
-      description: Simula la creación de una cuenta para el cliente indicado (sin persistencia).
       operationId: crearCuentaCliente
       parameters:
         - name: cliente-id
@@ -126,4 +121,3 @@ components:
         title: {type: string}
         status: {type: integer}
         detail: {type: string}
-        
